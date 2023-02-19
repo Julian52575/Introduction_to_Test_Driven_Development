@@ -11,10 +11,12 @@ OBJ = $(SRC:.c=.o)
 
 CFLAGS += -g -Wall -Wextra -I./lib/includes -L./lib/my -lmy
 
+CritFLAGS += -lcriterion
+
 NAME = "my_print_case"
 
 $(NAME): $(OBJ)
-	gcc -g -o $(NAME) $(OBJ)
+	gcc -g -o $(NAME) $(OBJ) $(CritFLAGS)
 
 all:     $(NAME)
 
